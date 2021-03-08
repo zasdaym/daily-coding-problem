@@ -10,8 +10,7 @@ def __ways_to_decode(data: str, cache: Dict[str, int]) -> int:
     if len(data) <= 2:
         if int(data) < 9 or int(data) > 26:
             return 1
-        else:
-            return 2
+        return 2
     single_prefix_result = ways_to_decode(data[1:])
     cache[data[1:]] = single_prefix_result
     if int(data[:2]) > 26:
