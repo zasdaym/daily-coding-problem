@@ -1,40 +1,47 @@
 package linkedlist
 
 import (
+	"fmt"
 	"unsafe"
 )
 
-type node struct {
+type Node struct {
 	value     int
-	adjacency *node
+	neighbour *Node
 }
 
-type xorLinkedList struct {
-	head *node
-	tail *node
+type XORLinkedList struct {
+	head      *Node
+	tail      *Node
+	nodeCount int
 }
 
-func (l *xorLinkedList) add(element int) {
-	n := node{value: element, adjacency: l.tail}
+func (l *XORLinkedList) Add(element int) {
+	n := Node{value: element, neighbour: l.tail}
 	if l.head == nil {
 		l.head, l.tail = &n, &n
-		return
+	} else {
+		l.tail.neighbour = xorNodeAddr(l.tail.neighbour, &n)
+		l.tail = &n
 	}
-	l.tail.adjacency = xorNodeAddr(l.tail.adjacency, &n)
-	l.tail = &n
+	l.nodeCount++
 }
 
-func (l *xorLinkedList) get(index int) int {
-	prevNode := (*node)(nil)
+func (l *XORLinkedList) Get(index int) (int, error) {
+	if index > l.nodeCount-1 {
+		return 0, fmt.Errorf("index out out range")
+	}
+	prevNode := (*Node)(nil)
 	currentNode := l.head
-	for i := 0; i < index; i++ {
-		nextNode := xorNodeAddr(currentNode.adjacency, prevNode)
+	for index > 0 {
+		nextNode := xorNodeAddr(currentNode.neighbour, prevNode)
 		prevNode = currentNode
 		currentNode = nextNode
+		index--
 	}
-	return currentNode.value
+	return currentNode.value, nil
 }
 
-func xorNodeAddr(first *node, second *node) *node {
-	return (*node)(unsafe.Pointer(uintptr(unsafe.Pointer(first)) ^ uintptr(unsafe.Pointer(second))))
+func xorNodeAddr(first *Node, second *Node) *Node {
+	return (*Node)(unsafe.Pointer(uintptr(unsafe.Pointer(first)) ^ uintptr(unsafe.Pointer(second))))
 }
