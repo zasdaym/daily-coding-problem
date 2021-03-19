@@ -1,5 +1,6 @@
 import ctypes
 
+
 class Node:
     def __init__(self, val):
         self.val = val
@@ -7,6 +8,7 @@ class Node:
 
     def __str__(self):
         return f"Value: {self.val}, Adjacent: {self.adj}, Address: {id(self)}"
+
 
 class XORLinkedList:
     def __init__(self):
@@ -37,11 +39,14 @@ class XORLinkedList:
             print(current_node)
         return current_node.val
 
+
 def get_pointer(instance):
     return id(instance)
 
+
 def dereference_pointer(address):
     return ctypes.cast(address, ctypes.py_object).value
+
 
 xor_linked_list = XORLinkedList()
 xor_linked_list.add(1)

@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def max_value_each_subarray(numbers, size):
     # deque to store indices of number for each subarray in descending order by value
     index_deque = deque()
@@ -17,7 +18,7 @@ def max_value_each_subarray(numbers, size):
         if i >= size - 1:
             print(numbers[index_deque[0]], end=" ")
 
-if __name__=="__main__":
-    numbers = [10, 5, 2, 7, 8, 7]
-    size = 3
-    max_value_each_subarray(numbers, 3)
+
+numbers = [10, 5, 2, 7, 8, 7]
+size = 3
+max_value_each_subarray(numbers, 3)

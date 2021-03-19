@@ -1,5 +1,6 @@
 from typing import Dict
 
+
 def longest_substring_with_distinct_char(size: int, string: int) -> int:
     if size > len(string):
         return string
@@ -20,6 +21,7 @@ def longest_substring_with_distinct_char(size: int, string: int) -> int:
         result = max(result, current_length)
         right += 1
     return result
+
 
 assert longest_substring_with_distinct_char(2, "abcba") == 3
 assert longest_substring_with_distinct_char(2, "abbbbbbbcbadxxaeaav") == 8

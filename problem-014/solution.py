@@ -1,5 +1,6 @@
 import random
 
+
 def estimate_pi():
     circle_points = 0
     square_points = 0
@@ -15,5 +16,6 @@ def estimate_pi():
 
         result = 4 * circle_points / square_points
     return result
+
 
 print(estimate_p())

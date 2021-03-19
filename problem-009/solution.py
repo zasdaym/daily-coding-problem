@@ -1,5 +1,6 @@
 from typing import List
 
+
 def max_non_adjacent_sum(numbers: List[int]) -> int:
     if not numbers:
         return 0
@@ -15,6 +16,7 @@ def max_non_adjacent_sum(numbers: List[int]) -> int:
         exclusive_max = prev_inclusive_max
 
     return max(exclusive_max, inclusive_max)
+
 
 assert max_non_adjacent_sum([2, 4, 6, 2, 5]) == 13
 assert max_non_adjacent_sum([5, 1, 1, 3]) == 8

@@ -1,6 +1,7 @@
 from typing import List
 import random
 
+
 def pick(stream: List[int]) -> int:
     result: int = None
     for index, element in enumerate(stream):

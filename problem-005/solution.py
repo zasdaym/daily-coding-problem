@@ -3,11 +3,14 @@ def cons(a, b):
         return f(a, b)
     return pair
 
+
 def car(pair):
-    return pair(lambda a, b : a)
+    return pair(lambda a, b: a)
+
 
 def cdr(pair):
-    return pair(lambda a, b : b)
+    return pair(lambda a, b: b)
+
 
 assert car(cons(3, 4)) == 3
 assert cdr(cons(3, 4)) == 4

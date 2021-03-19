@@ -1,8 +1,10 @@
 from typing import Dict
 
+
 def ways_to_decode(data: str) -> int:
     cache: Dict[str, int] = {}
     return __ways_to_decode(data, cache)
+
 
 def __ways_to_decode(data: str, cache: Dict[str, int]) -> int:
     if data in cache:
@@ -19,6 +21,7 @@ def __ways_to_decode(data: str, cache: Dict[str, int]) -> int:
     cache[data[2:]] = double_prefix_result
     return single_prefix_result + double_prefix_result
 
+
 assert ways_to_decode("111") == 3
 assert ways_to_decode("4321") == 2
-assert ways_to_decode("1121321")  == 16
+assert ways_to_decode("1121321") == 16
