@@ -2,7 +2,7 @@ from typing import List
 import math
 
 
-def arr_product(numbers: List[int]) List[int]:
+def arr_product(numbers: List[int]) -> List[int]:
     product = math.prod(numbers)
     result = [product/number for number in numbers]
     return result
