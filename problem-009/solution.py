@@ -2,6 +2,12 @@ from typing import List
 
 
 def max_non_adjacent_sum(numbers: List[int]) -> int:
+    """
+    Maintain two max value, that is inclusive max and exclusive max.
+    Inclusive max is max value including the current number.
+    Exclusive max is max value excluding the current number.
+    For every iteration both value will be used to determine the real max value.
+    """
     if not numbers:
         return 0
     if len(numbers) <= 2:

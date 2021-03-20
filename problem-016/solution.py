@@ -2,7 +2,10 @@ from typing import List
 
 
 class Logger:
-    """Logger saves last N-th order ID"""
+    """
+    Logger saves last N-th order ID.
+    Implemented using circular buffer.
+    """
 
     def __init__(self, max_size=1):
         self.order_ids: List[int] = [0] * max_size

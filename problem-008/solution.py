@@ -2,6 +2,10 @@ from typing import List
 
 
 class Node:
+    """
+    Node is a binary tree node.
+    """
+
     def __init__(self, value: int, left=None, right=None):
         self.value = value
         self.left = left
@@ -14,6 +18,9 @@ def count_unival_subtrees(root: Node) -> int:
 
 
 def __count_unival_subtress(root: Node, count: List[int]) -> (int, bool):
+    """
+    Recursively count how many unival trees is exist for every subtree.
+    """
     if root is None:
         return 0, True
 
@@ -36,3 +43,11 @@ def __count_unival_subtress(root: Node, count: List[int]) -> (int, bool):
 
 node = Node(0, Node(1), Node(0, Node(1, Node(1), Node(1)), Node(0)))
 assert count_unival_subtrees(node) == 5
+
+#   0
+#  / \
+# 1   0
+#    / \
+#   1   0
+#  / \
+# 1   1

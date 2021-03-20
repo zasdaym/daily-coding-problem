@@ -3,6 +3,10 @@ import sys
 
 
 def get_minimum_painting_cost(cost_matrix: List[List[int]]) -> int:
+    """
+    Main idea is to keep track of two most minimum cost.
+    Because if the most minimum cost on current house is the same color as previous house, we can fallback to second most minimum cost.
+    """
     if not cost_matrix:
         return 0
 
@@ -46,7 +50,7 @@ def get_minimum_painting_cost(cost_matrix: List[List[int]]) -> int:
 
 cost_matrix = [
     [7, 1, 8, 6, 2, 9],
-    [5, 6, 7, 2, 4, 1],
+    [5, 6, 1, 4, 4, 2],
     [9, 9, 9, 1, 9, 9]
 ]
 assert get_minimum_painting_cost(cost_matrix) == 5

@@ -2,6 +2,11 @@ from collections import deque
 
 
 def max_value_each_subarray(numbers, size):
+    """
+    Use deque to keep track of max value for each subarray.
+    Deque will hold the element index, not value. So we can know that an element is outside of current subarray.
+    Deque will hold the element in descending order by value, to keep only important (used) elements.
+    """
     # deque to store indices of number for each subarray in descending order by value
     index_deque = deque()
 

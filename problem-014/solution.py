@@ -2,6 +2,12 @@ import random
 
 
 def estimate_pi():
+    """
+    Estimate pi with Monte Carlo Method.
+    The main logic is circle area = pi * r^2. And square area = (2r)^2 = 4r^2.
+    So, circle area / square area = pi / 4.
+    Based on this, the method is to randomly create a point, and track of count whether it is inside the circle or not using pythagoras theorem.
+    """
     circle_points = 0
     square_points = 0
     result = 0
@@ -18,4 +24,4 @@ def estimate_pi():
     return result
 
 
-print(estimate_p())
+print(estimate_pi())

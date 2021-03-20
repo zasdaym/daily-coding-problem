@@ -3,6 +3,10 @@ import threading
 
 
 class Scheduler:
+    """
+    Scheduler can schedule a job with specified delay asynchronously.
+    """
+
     def __init__(self):
         self.jobs = []  # tuple of (function, time in miliseconds)
 

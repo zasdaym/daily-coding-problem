@@ -2,7 +2,10 @@ from typing import Dict, List, Set
 
 
 def two_sum(numbers: List[int], target: int) -> bool:
-    # For every number check if the difference between current number and the target is ever visited.
+    """
+    Create a set to maintain visited number, because element check in a set is O(1).
+    For every number, check if the difference between the target and the number is ever visited.
+    """
     visited: Set[int] = set()
     for number in numbers:
         diff = target - number

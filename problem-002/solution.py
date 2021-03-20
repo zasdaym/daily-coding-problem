@@ -3,6 +3,10 @@ import math
 
 
 def arr_product(numbers: List[int]) -> List[int]:
+    """
+    Calculate total product of the array.
+    Update every array element as (total product / element).
+    """
     product = math.prod(numbers)
     result = [product/number for number in numbers]
     return result
