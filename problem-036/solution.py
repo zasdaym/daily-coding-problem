@@ -14,6 +14,8 @@ def second_largest_in_binary_tree(node: Node) -> int:
     So there just two possibilities for the 2nd largest element:
     1. Right above the largest element.
     2. The most right element under the largest element left subtree.
+
+    Another unoptimal approach is to traverse all nodes and store the values in a heap.
     """
     prev = node
     while node.right:
