@@ -31,6 +31,7 @@ def second_largest_in_binary_tree(node: Node) -> int:
 
     return node.value
 
+
 root = Node(5, Node(2, Node(1), Node(3)),
             Node(12, Node(9, Node(7, Node(6), Node(10)), Node(11))))
 assert second_largest_in_binary_tree(root) == 11
