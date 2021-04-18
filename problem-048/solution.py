@@ -31,6 +31,7 @@ def preorder_traversal(root: Node, vals: List[str] = []) -> List[str]:
     return vals
 
 
-reconstructed_root_node = reconstruct_tree(["a", "b", "d", "e", "c", "f", "g"],
-                                           ["d", "b", "e", "a", "f", "c", "g"])
-assert preorder_traversal(reconstructed_root_node) == ["a", "b", "d", "e", "c", "f", "g"]
+root_node = reconstruct_tree(["a", "b", "d", "e", "c", "f", "g"],
+                             ["d", "b", "e", "a", "f", "c", "g"])
+
+assert preorder_traversal(root_node) == ["a", "b", "d", "e", "c", "f", "g"]
