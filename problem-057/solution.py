@@ -2,6 +2,13 @@ from typing import List
 
 
 def justify_words(text: str, k: int) -> List[str]:
+    """
+    1. Split text into words
+    2. Iterate each word:
+        1. If word can be appended (total chunk length < k), append it.
+        2. If not, append the chunk to the final result immediately, and use the word as new chunk.
+    3. if the last temporary string length is < k, append it to the result as the final part.
+    """
     if not text:
         return 0
 
