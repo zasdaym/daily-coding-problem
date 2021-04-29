@@ -1,11 +1,11 @@
-package linkedlist
+package problem006
 
 import (
 	"testing"
 )
 
 func TestXORLinkedList(t *testing.T) {
-	linkedList := &XORLinkedList{}
+	linkedList := &xorLinkedList{}
 	for i := 0; i <= 10; i++ {
 		linkedList.Add(i)
 	}
