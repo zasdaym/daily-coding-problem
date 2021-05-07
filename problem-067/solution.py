@@ -54,7 +54,7 @@ class LFUCache:
         # remove the node from a freq dict
         freq = node.freq
         self.nodes_by_freq[freq].pop(node)
-        
+
         # if new max freq reached, then increase min_freq (to handle put when capacity full)
         if self.min_freq == freq and not self.nodes_by_freq[freq]:
             self.min_freq += 1
