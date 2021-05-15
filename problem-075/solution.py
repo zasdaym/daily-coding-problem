@@ -25,7 +25,8 @@ def longest_increasing_subsequence_length(nums: List[int]) -> int:
         # With this trick we lose the possibility to print the result subsequence element
         # because of replacement.
         else:
-            insert_pos = binary_search_ceil(tail_table, 0, result_len - 1, nums[i])
+            insert_pos = binary_search_ceil(
+                tail_table, 0, result_len - 1, nums[i])
             tail_table[insert_pos] = nums[i]
 
     return result_len
@@ -41,6 +42,7 @@ def binary_search_ceil(nums: List[int], left: int, right: int, target: int) -> i
         else:
             left = middle + 1
     return ceil
+
 
 test_nums = [2, 5, 1, 7, 11, 8, 10, 13, 6]
 assert longest_increasing_subsequence_length(test_nums) == 6
