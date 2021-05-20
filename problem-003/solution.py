@@ -6,7 +6,7 @@ class Node:
     Node is a binary tree node.
     """
 
-    def __init__(self, val: str, left: Node = None, right: Node = None):
+    def __init__(self, val: str, left: 'Node' = None, right: 'Node' = None) -> None:
         self.val = val
         self.left = left
         self.right = right
