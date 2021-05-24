@@ -13,8 +13,9 @@ def count_islands(grid: List[List[int]]) -> int:
     count = 0
     for row in range(len(grid)):
         for col in range(len(grid[0])):
-            dfs(grid, row, col)
-            count += 1
+            if grid[row][col] == 1:
+                dfs(grid, row, col)
+                count += 1
     return count
 
 
@@ -28,3 +29,15 @@ def dfs(grid: List[List[int]], row: int, col: int) -> None:
     dfs(grid, row-1, col)
     dfs(grid, row, col+1)
     dfs(grid, row, col-1)
+
+
+test_grid: List[List[int]] = [
+    [1, 0, 0, 0, 0],
+    [0, 0, 1, 1, 0],
+    [0, 1, 1, 0, 0],
+    [0, 0, 0, 0, 0],
+    [1, 1, 0, 0, 1],
+    [1, 1, 0, 0, 1]
+]
+expected_result = 4
+assert count_islands(test_grid) == expected_result

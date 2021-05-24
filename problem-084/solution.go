@@ -1,14 +1,14 @@
 package problem084
 
 // countIslands counts number of islands in given grid
-// of land (represented in 1) and water (represented by 2).
+// of land (represented in 1) and water (represented by 0).
 // Island is a group of 1 that are surrounded by 0.
 func countIslands(grid [][]int) int {
 	if len(grid) == 0 {
 		return 0
 	}
 
-	count := 1
+	count := 0
 	for i := 0; i < len(grid); i++ {
 		for j := 0; j < len(grid[0]); j++ {
 			if grid[i][j] != 1 {
