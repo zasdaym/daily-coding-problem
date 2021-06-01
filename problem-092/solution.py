@@ -10,7 +10,6 @@ def courses_to_take(course_to_prereqs: Dict[str, Set[str]]) -> Set[str]:
     prereq_to_courses: Dict[str, Set[str]] = {}
     for course in course_to_prereqs:
         for prereq in course_to_prereqs[course]:
-            # prereq without any prereq (basic course)
             if prereq not in prereq_to_courses:
                 prereq_to_courses[prereq]: Set[str] = set()
 
@@ -22,7 +21,7 @@ def courses_to_take(course_to_prereqs: Dict[str, Set[str]]) -> Set[str]:
         prereq = todos.pop()
         result.append(prereq)
 
-        # find next course to be accomplished with current course
+        # remove current course from other courses prereq list.
         for course in prereq_to_courses.get(prereq, []):
             course_to_prereqs[course].remove(prereq)
             if not course_to_prereqs[course]:

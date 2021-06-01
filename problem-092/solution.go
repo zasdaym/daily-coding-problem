@@ -12,7 +12,7 @@ func coursesToTake(coursePrereqs map[string]map[string]bool) []string {
 		todos = append(todos, course)
 	}
 
-	// build prereq to course map
+	// build prereq to courses map
 	prereqCourses := make(map[string]map[string]bool)
 	for course, prereqs := range coursePrereqs {
 		for prereq := range prereqs {
@@ -30,7 +30,7 @@ func coursesToTake(coursePrereqs map[string]map[string]bool) []string {
 		todos = todos[:len(todos)-1]
 		result = append(result, prereq)
 
-		// remove current course from other courses prereqs list
+		// remove current course from other courses prereq list
 		for course := range prereqCourses[prereq] {
 			delete(coursePrereqs[course], prereq)
 			if len(coursePrereqs[course]) == 0 {
