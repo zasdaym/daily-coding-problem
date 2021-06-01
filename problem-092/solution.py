@@ -35,6 +35,7 @@ def courses_to_take(course_to_prereqs: Dict[str, Set[str]]) -> Set[str]:
 
     return result
 
+
 course_to_prereqs_test = {
     "CSC300": {"CSC100", "CSC200"},
     "CSC200": {"CSC100"},
