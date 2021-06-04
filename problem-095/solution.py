@@ -4,7 +4,7 @@ from typing import List
 def next_permutation(nums: List[int]) -> None:
     """
     1. Iterate from right to left until num on the left is smaller than on the right (this is pivot).
-    2. Find the smallest biggest number than the pivot, than swap both positions.
+    2. Find the smallest number bigger than the pivot, than swap both positions.
     3. Reverse the sublist from the pivot until the end.
     """
     pivot = len(nums) - 2
