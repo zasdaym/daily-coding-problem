@@ -1,6 +1,9 @@
 package problem003
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestSerialize(t *testing.T) {
 	testCases := []struct {
@@ -92,14 +95,17 @@ func isSameTree(a, b *treeNode) bool {
 	}
 
 	if a == nil {
+		fmt.Printf("a tree nil when b is %s", b.val)
 		return false
 	}
 
 	if b == nil {
+		fmt.Printf("b tree nil when a is %s", a.val)
 		return false
 	}
 
 	if a.val != b.val {
+		fmt.Printf("%s is not %s", a.val, b.val)
 		return false
 	}
 

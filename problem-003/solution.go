@@ -27,11 +27,12 @@ func serialize(root *treeNode) string {
 // deserialize takes a string representation of a binary tree,
 // converts it back into a binary tree, and returns the root node.
 func deserialize(s string) *treeNode {
-	if s == "" {
+	if len(s) == 0 {
 		return nil
 	}
+
 	nodeVals := strings.Split(s, ",")
-	return deserializeHelper((nodeVals))
+	return deserializeHelper(nodeVals)
 }
 
 // deserializeHelper takes a slice of node values of a binary tree,
@@ -42,7 +43,11 @@ func deserializeHelper(nodeVals []string) *treeNode {
 	}
 
 	val := nodeVals[0]
-	nodeVals = nodeVals[1:]
+	copy(nodeVals, nodeVals[1:])
+
+	if val == "end" {
+		return nil
+	}
 
 	root := &treeNode{
 		val:   val,
