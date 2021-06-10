@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Tuple
 
 
 class Node:
@@ -17,7 +17,7 @@ def count_unival_subtrees(root: Node) -> int:
     return count
 
 
-def __count_unival_subtress(root: Node, count: List[int]) -> (int, bool):
+def __count_unival_subtress(root: Node, count: int) -> Tuple[int, bool]:
     """
     Recursively count how many unival trees is exist for every subtree.
     """
