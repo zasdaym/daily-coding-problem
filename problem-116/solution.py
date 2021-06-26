@@ -1,4 +1,4 @@
-import random
+from random import random
 
 class TreeNode:
     def __init__(self, val: int, left: 'TreeNode' = None, right: 'TreeNode' = None):
@@ -13,7 +13,7 @@ class TreeNode:
     @property
     def left(self):
         if not self._is_left_evaluated:
-            if random.random() < 0.5:
+            if random() < 0.5:
                 self._left = Node(0)
 
         self._is_left_evaluated = True
@@ -22,7 +22,7 @@ class TreeNode:
     @property
     def right(self):
         if not self._is_right_evaluated:
-            if random.random() < 0.5:
+            if random() < 0.5:
                 self._right = Node(0)
 
         self._is_right_evaluated = True
