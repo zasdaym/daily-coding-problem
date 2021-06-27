@@ -32,5 +32,14 @@ def minimum_level_sum(root: TreeNode) -> int:
 
     return min_level
 
-test_node = TreeNode(15, TreeNode(1, TreeNode(4)), TreeNode(2, TreeNode(6), TreeNode(8)))
+
+test_node = TreeNode(15,
+                     TreeNode(1,
+                              TreeNode(4)
+                              ),
+                     TreeNode(2,
+                              TreeNode(6),
+                              TreeNode(8)
+                              )
+                     )
 assert minimum_level_sum(test_node) == 1
