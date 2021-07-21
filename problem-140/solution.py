@@ -2,7 +2,7 @@ from typing import List, Set
 from unittest import TestCase
 
 
-def single_element(numbers: List[int]) -> List[int]:
+def single_elements(numbers: List[int]) -> List[int]:
     """
     Another tricky bit manipulation problem.
 
@@ -47,5 +47,5 @@ class Test(TestCase):
 
         for test in tests:
             numbers, expected = test
-            got = single_element(numbers)
+            got = single_elements(numbers)
             self.assertEqual(expected, got)
