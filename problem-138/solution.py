@@ -6,11 +6,12 @@ def min_coins(target: int) -> int:
     coins = [25, 10, 5, 1]
     total_count = 0
 
-    # Try to substract the target with each available coins, start with biggest first.
-    for coin in coins:
-        count = target // coin
-        target -= count * coin
-        total_count += count
+    while target:
+        # Try to substract the target with each available coins, start with biggest first.
+        for coin in coins:
+            count = target // coin
+            target -= count * coin
+            total_count += count
 
     return total_count
 
